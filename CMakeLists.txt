@@ -37,3 +37,13 @@ add_executable(TimerMultiThread
     timer_multithread.cpp)
 target_link_libraries(TimerMultiThread
     ${Boost_LIBRARIES})
+# Tutorial, TCP
+add_executable(TCPSyncClient
+    tcp_sync_client.cpp)
+target_link_libraries(TCPSyncClient
+    ${Boost_LIBRARIES}
+    pthread)
+add_executable(TCPSyncServer
+    tcp_sync_server.cpp)
+target_link_libraries(TCPSyncServer
+    ${Boost_LIBRARIES})
