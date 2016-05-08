@@ -20,3 +20,7 @@ add_executable(TimerSync
     timer_sync.cpp)
 target_link_libraries(TimerSync
     ${Boost_LIBRARIES})
+add_executable(TimerAsync
+    timer_async.cpp)
+target_link_libraries(TimerAsync
+    ${Boost_LIBRARIES})
