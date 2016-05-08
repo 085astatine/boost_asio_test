@@ -24,3 +24,7 @@ add_executable(TimerAsync
     timer_async.cpp)
 target_link_libraries(TimerAsync
     ${Boost_LIBRARIES})
+add_executable(TimerBindingArguments
+    timer_binding_arguments.cpp)
+target_link_libraries(TimerBindingArguments
+    ${Boost_LIBRARIES})
