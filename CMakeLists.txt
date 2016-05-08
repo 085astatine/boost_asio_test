@@ -28,3 +28,7 @@ add_executable(TimerBindingArguments
     timer_binding_arguments.cpp)
 target_link_libraries(TimerBindingArguments
     ${Boost_LIBRARIES})
+add_executable(TimerCallbackClass
+    timer_callback_class.cpp)
+target_link_libraries(TimerCallbackClass
+    ${Boost_LIBRARIES})
