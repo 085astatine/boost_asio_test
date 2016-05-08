@@ -8,8 +8,9 @@ add_definitions(
 message("CXX Compiler ID: " ${CMAKE_CXX_COMPILER_ID})
 message("CMake System Name: " ${CMAKE_SYSTEM_NAME})
 
-find_package(Boost REQUIRED system)
+find_package(Boost REQUIRED system thread)
 message("Boost System Library   : " ${Boost_SYSTEM_LIBRARIES})
+message("Boost Thread Library   : " ${Boost_THREAD_LIBRARIES})
 message("Boost Include Directory: " ${Boost_INCLUDE_DIR})
 
 include_directories(
@@ -31,4 +32,8 @@ target_link_libraries(TimerBindingArguments
 add_executable(TimerCallbackClass
     timer_callback_class.cpp)
 target_link_libraries(TimerCallbackClass
+    ${Boost_LIBRARIES})
+add_executable(TimerMultiThread
+    timer_multithread.cpp)
+target_link_libraries(TimerMultiThread
     ${Boost_LIBRARIES})
