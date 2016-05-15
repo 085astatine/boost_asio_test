@@ -47,3 +47,7 @@ add_executable(TCPSyncServer
     tcp_sync_server.cpp)
 target_link_libraries(TCPSyncServer
     ${Boost_LIBRARIES})
+add_executable(TCPAsyncServer
+    tcp_async_server.cpp)
+target_link_libraries(TCPAsyncServer
+    ${Boost_LIBRARIES})
