@@ -21,6 +21,7 @@ int main(){
                     boost::asio::ip::udp::endpoint(
                                 boost::asio::ip::udp::v4(),
                                 13));
+        std::cout << "Start : " << make_daytime_string();
         while(true){
             std::array<char, 1> receive_buffer;
             boost::asio::ip::udp::endpoint remote_endpoint;
@@ -29,20 +30,23 @@ int main(){
             socket.receive_from(
                         boost::asio::buffer(receive_buffer),
                         remote_endpoint,
-                        0,
+                        0,/* socket_base::message_flags flag*/
                         error);
+            std::cout << "Receive from: " << make_daytime_string();
             if(error && error != boost::asio::error::message_size){
                 throw boost::system::system_error(error);
             }
             // determine what wa are going to sent back to client
             const std::string message = make_daytime_string();
+            std::cout << "Message     : " << message;
             boost::system::error_code ignored_error;
             // Send the response to the remote endpoint
             socket.send_to(
                         boost::asio::buffer(message),
                         remote_endpoint,
-                        0,
+                        0,/* socket_base::message_flags flag*/
                         ignored_error);
+            std::cout << "Send to     : " << make_daytime_string();
         }
     }catch(std::exception& e){
         std::cerr << e.what() << std::endl;
