@@ -51,3 +51,13 @@ add_executable(TCPAsyncServer
     tcp_async_server.cpp)
 target_link_libraries(TCPAsyncServer
     ${Boost_LIBRARIES})
+# Tutorial, UDP
+add_executable(UDPSyncClient
+    udp_sync_client.cpp)
+target_link_libraries(UDPSyncClient
+    ${Boost_LIBRARIES}
+    pthread)
+add_executable(UDPSyncServer
+    udp_sync_server.cpp)
+target_link_libraries(UDPSyncServer
+    ${Boost_LIBRARIES})
