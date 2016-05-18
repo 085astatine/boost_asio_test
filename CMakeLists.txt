@@ -61,3 +61,7 @@ add_executable(UDPSyncServer
     udp_sync_server.cpp)
 target_link_libraries(UDPSyncServer
     ${Boost_LIBRARIES})
+add_executable(UDPAsyncServer
+    udp_async_server.cpp)
+target_link_libraries(UDPAsyncServer
+    ${Boost_LIBRARIES})
